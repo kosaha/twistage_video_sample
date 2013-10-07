@@ -13,7 +13,7 @@
 	<tr>
 		<td><%= link_to "#{video.title}", :controller => "twistage", :action => "show", :id => video.video_id, :title => video.title %></td>
 		<td><%= video.description %></td>
-		<td><%= Time.at(video.duration == nil ? 0 : video.duration).utc.strftime('%H:%M:%S') %></td>
+		<td><%= Time.at(video.duration.presence || 0).utc.strftime('%H:%M:%S') %></td>
 	</tr>
 	<% end %>
 </table>
