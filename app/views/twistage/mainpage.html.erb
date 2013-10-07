@@ -1,2 +1,19 @@
-<h1>Twistage#mainpage</h1>
-<p>Find me in app/views/twistage/mainpage.html.erb</p>
+<h1>Twistage Videos</h1>
+
+<table border="1" cellpadding="0" cellspacing="0" width="100%">
+	<col width="25%">
+	<col width="55%">
+	<col width="20%">
+	<tr>
+		<th>Title</th>
+		<th>Description</th>
+		<th>Duration</th>
+	</tr>
+	<% @videos.each do |video| %>
+	<tr>
+		<td><%= link_to "#{video.title}", :controller => "twistage", :action => "show", :id => video.video_id, :title => video.title %></td>
+		<td><%= video.description %></td>
+		<td><%= Time.at(video.duration == nil ? 0 : video.duration).utc.strftime('%H:%M:%S') %></td>
+	</tr>
+	<% end %>
+</table>

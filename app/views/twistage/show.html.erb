@@ -1,0 +1,17 @@
+<h1>Watch Video</h1>
+<!--
+	<script type="text/javascript" src="http://service.twistage.com/api/script"></script>
+	<script type="text/javascript">viewNode("<%= @video_id %>", {"server_detection": true, "width": 480, "height": 360});</script>
+-->	
+<object type="application/x-shockwave-flash" id="embedded_player" name="embedded_player" width="480" height="360" data="http://service.twistage.com/plugins/player.swf" class="player-swf">
+	<param name="allowfullscreen" value="true"/>
+	<param name="allowscriptaccess" value="always"/>
+	<param name="movie" value="http://service.twistage.com/plugins/player.swf"/>
+	<param name="base" value="http://service.twistage.com"/>
+	<param name="flashVars" value="v=<%= @video_id %>"/>
+	<param name="bgcolor" value="#000000"/>
+</object>
+<br/>
+<%= @video_title %>
+
+
