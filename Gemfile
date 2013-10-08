@@ -37,6 +37,7 @@ gem 'nokogiri', '~> 1.6'
 
 group :development, :test do
   gem 'rspec-rails', '~>2.4'
+  gem 'capybara'
 end
 
 # Use ActiveModel has_secure_password

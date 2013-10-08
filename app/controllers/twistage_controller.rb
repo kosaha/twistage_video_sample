@@ -4,7 +4,7 @@ class TwistageController < ApplicationController
   def mainpage
     Helix::Config.load('./config/helix.yml')
     @videos = Helix::Video.find_all
-    puts @videos.to_json
+    #puts @videos.to_json
   end
   
   def show
