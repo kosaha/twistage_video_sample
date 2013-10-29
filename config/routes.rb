@@ -3,6 +3,16 @@ TwistageVideoSample::Application.routes.draw do
   
   get "twistage/show"
   
+  get "twistage/get_thumbnail"
+  
+  get "twistage/update_stillframe"
+  
+  get "twistage/screenshotspage"
+  
+  get "twistage/get_screenshot_image"
+  
+  get "twistage/slice_video"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

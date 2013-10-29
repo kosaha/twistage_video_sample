@@ -1,19 +1,15 @@
 <h1>Twistage Videos</h1>
 
-<table border="1" cellpadding="0" cellspacing="0" width="100%">
-	<col width="25%">
-	<col width="55%">
-	<col width="20%">
-	<tr>
-		<th>Title</th>
-		<th>Description</th>
-		<th>Duration</th>
-	</tr>
+<table border="1" cellpadding="0" cellspacing="0" width="100%">	
 	<% @videos.each do |video| %>
 	<tr>
-		<td><%= link_to "#{video.title}", :controller => "twistage", :action => "show", :id => video.video_id, :title => video.title %></td>
-		<td><%= video.description %></td>
-		<td><%= Time.at(video.duration.presence || 0).utc.strftime('%H:%M:%S') %></td>
+		<td><%= image_tag twistage_get_thumbnail_path(video.video_id) %></td>
+		<td valign="top"><%= link_to "#{video.title}", twistage_show_path({:id => video.video_id, :title => video.title}) %>
+			&nbsp;&nbsp;|&nbsp;&nbsp;<i>Duration: [<%= Time.at(video.duration.presence || 0).utc.strftime('%H:%M:%S') %>]</i>
+		<br/><br/><%= video.description %>
+		<br/><br/><%= link_to "Get Screenshots", twistage_update_stillframe_path({:id => video.video_id}) %>
+		<br/><br/><%= link_to "Slice Video", twistage_slice_video_path({:id => video.video_id}) %>
+		</td>
 	</tr>
 	<% end %>
 </table>

@@ -1,0 +1,12 @@
+<h1>Video Screenshots</h1>
+
+<%= @video.title %>
+<br/>
+<% @video_frames.each do |video_frame_id| %>
+<%= image_tag url_for(:controller => "twistage", :action => "get_screenshot_image", :id => @video.video_id, :frame_id => video_frame_id) %>
+<% end %>
+<br/>
+<%= link_to "Back", twistage_mainpage_path %>
+
+
+

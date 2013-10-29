@@ -1,0 +1,6 @@
+RestClient.get "http://service.twistage.com/api/ingest_key?licenseKey=edb7b1084a6e4&duration=1200&contributor=helix&company_id=cloudy", "Accept"=>"*/*; q=0.5, application/xml", "Accept-Encoding"=>"gzip, deflate"
+# => 403 Forbidden | text/html 30 bytes
+RestClient.get "http://service.twistage.com/videos/aae750b445c3c.json?signature=r3670a6042a6d10cfc2fd2e0d", "Accept"=>"*/*; q=0.5, application/xml", "Accept-Encoding"=>"gzip, deflate"
+# => 200 OK | application/json 759 bytes
+RestClient.get "http://service.twistage.com/api/ingest_key?licenseKey=edb7b1084a6e4&duration=1200&contributor=helix&company_id=cloudy", "Accept"=>"*/*; q=0.5, application/xml", "Accept-Encoding"=>"gzip, deflate"
+# => 403 Forbidden | text/html 30 bytes
